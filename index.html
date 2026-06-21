@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drop Blocks</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app" aria-label="Drop Blocks game">
+      <section class="game-shell">
+        <aside class="side-panel side-panel-left" aria-label="Game status">
+          <div class="brand">
+            <span class="brand-mark"></span>
+            <div>
+              <h1>Drop Blocks</h1>
+              <p>落ちものパズル</p>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Score</span>
+              <strong id="score">0</strong>
+            </div>
+            <div class="stat">
+              <span>Lines</span>
+              <strong id="lines">0</strong>
+            </div>
+            <div class="stat">
+              <span>Level</span>
+              <strong id="level">1</strong>
+            </div>
+            <div class="stat">
+              <span>Best</span>
+              <strong id="best">0</strong>
+            </div>
+          </div>
+
+          <div class="preview-box">
+            <div class="preview-title">Hold</div>
+            <canvas id="hold" width="128" height="128"></canvas>
+          </div>
+        </aside>
+
+        <section class="board-wrap" aria-label="Game board">
+          <canvas id="board" width="300" height="600"></canvas>
+          <div id="overlay" class="overlay is-visible">
+            <div class="overlay-inner">
+              <h2>Drop Blocks</h2>
+              <p>ラインを消して、スピードに乗り切ろう。</p>
+              <button id="start-button" type="button">Start</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="side-panel side-panel-right" aria-label="Controls and next piece">
+          <div class="preview-box">
+            <div class="preview-title">Next</div>
+            <canvas id="next" width="128" height="128"></canvas>
+          </div>
+
+          <div class="controls">
+            <button id="pause-button" type="button" aria-label="Pause game">Pause</button>
+            <button id="restart-button" type="button" aria-label="Restart game">Restart</button>
+          </div>
+
+          <div class="key-list" aria-label="Keyboard controls">
+            <div><kbd>←</kbd><kbd>→</kbd><span>Move</span></div>
+            <div><kbd>↓</kbd><span>Soft drop</span></div>
+            <div><kbd>↑</kbd><span>Rotate</span></div>
+            <div><kbd>Space</kbd><span>Hard drop</span></div>
+            <div><kbd>C</kbd><span>Hold</span></div>
+            <div><kbd>P</kbd><span>Pause</span></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
